@@ -4,13 +4,13 @@ pipeline {
         maven 'Maven'
     }
     environment {
-        registry = "287489840086.dkr.ecr.ap-southeast-1.amazonaws.com/myecr"
+        registry = "730335201364.dkr.ecr.us-east-1.amazonaws.com/myecr"
         dockerImageTag = "${env.BUILD_NUMBER}"
     }
     stages {
         stage('Code Checkout') {
             steps {
-                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-token-jenkins', url: 'https://github.com/venugopalsgnew/JenkinsCICD_Legro.git']])
+                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-token-jenkins', url: 'https://github.com/harydhillon03/JenkinsCICD_Legro.git']])
             }
         }
         stage('Build and Test') {
